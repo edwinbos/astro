@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import personalImage from '../images/edwin.png';
+---
+<header class="background-grid py-24">
+    <div class="grid grid-cols-[1fr_100px_300px] items-center container mx-auto px-4 max-w-5xl">
+        <div class="col-span-2 col-start-1 row-start-1 text-white relative z-10">
+            <h1 class="text-4xl font-light">Edwin Bos</h1>
+            <h2 class="text-7xl font-black mb-8">Frontend Engineer</h2>
+            <p class="max-w-xl font-extralight leading-loose text-lg">Based in the Netherlands, currently working as Frontend Lead @ Cream working on large Magento projects.</p>    
+        </div>
+        <div class="col-span-2 col-start-2 row-start-1">
+            <div class="w-[400px] h-[400px] bg-blue-200 rounded-full rounded-br-[40rem] overflow-hidden drop-shadow-[20px_20px_0_rgba(0,0,0,0.25)]">
+                <Image src={personalImage} alt="A bird sitting on a nest of eggs." />
+            </div>
+        </div>
+    </div>
+</header>w
