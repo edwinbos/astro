@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import OctocatImage from '../images/octocat.svg';
+import ActivityImage from '../images/activity.svg';
+import ArrowRightIcon from '../components/Icons/ArrowRight.astro';
+import GithubLogo from '../components/Logos/Github.astro';
+
+---
+<section class="container mx-auto">
+    <div class="bg-white rounded-4xl py-8 pl-8 pr-16 md:pl-0 md:grid md:grid-cols-[25rem_1fr]">
+        <div class="relative">
+            <Image src={OctocatImage} alt="Octocat" class="relative -left-8" />
+            <Image src={ActivityImage} alt="Activity" class="absolute -left-12 bottom-0" />
+        </div>
+        <div class="self-center">
+            <h2 class="">Let's code on <GithubLogo className="h-6 inline relative -top-[3px]"/></h2>
+            <p class="leading-loose font-light mt-4 mb-6">
+                You'll find a collection of my projects, contributions, presentations and experiments.
+                Explore my repositories, see my latest commits, and feel free to contribute or provide feedback.
+            </p>
+            <a href="https://github.com/edwinbos" title="Edwin Bos Github" target="_blank" class="primary-link">
+                Check it out on Github <ArrowRightIcon className="w-5 h-5"/>
+            </a>
+        </div>
+    </div>
+</section>

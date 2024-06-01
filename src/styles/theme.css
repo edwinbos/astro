@@ -9,3 +9,21 @@
     background-size: 100px 100px;
     background-position: -1px -1px;
 }
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.primary-link {
+    display: flex;
+    font-weight: 300;
+    gap: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.primary-link:hover {
+    text-decoration: none;
+}
