@@ -17,7 +17,7 @@ h2 {
 }
 
 .primary-link {
-    display: flex;
+    display: inline-flex;
     font-weight: 300;
     gap: 0.5rem;
     text-decoration: underline;

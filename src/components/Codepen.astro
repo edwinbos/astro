@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import CodepenScreenshot1Image from '../images/codepen-screenshot-1.jpg';
+import CodepenScreenshot2Image from '../images/codepen-screenshot-2.jpg';
+import CodepenLinesImage from '../images/codepen-lines.svg';
+import ArrowRightIcon from '../components/Icons/ArrowRight.astro';
+import CodepenLogo from '../components/Logos/Codepen.astro';
+import CodepenHeartIcon from '../components/Icons/CodepenHeart.astro';
+import CodepenCommentIcon from '../components/Icons/CodepenComment.astro';
+import CodepenEyeIcon from '../components/Icons/CodepenEye.astro';
+
+---
+<section class="relative mb-12">
+    <div class="container mx-auto md:grid md:grid-cols-[5fr_4fr]">
+        <div class="self-center text-white">
+            <h2 class="">Let's code on <CodepenLogo className="h-8 inline relative"/></h2>
+            <p class="leading-loose font-light mt-4 mb-6">
+                You'll find a collection of experiments with CSS, Tailwind, JavaScript, AlpineJS, Vue etc.
+            </p>
+            <a href="https://codepen.io/edwinbos" title="Edwin Bos Codepen" target="_blank" class="primary-link">
+                Check it out on Codepen <ArrowRightIcon className="w-5 h-5"/>
+            </a>
+        </div>
+        <div class="relative h-96 mt-12 md:mt-0">
+            <div class="absolute left-12 top-12 z-20 -rotate-12 rounded bg-[#1e1f26]">
+                <div>
+                    <Image src={CodepenScreenshot1Image} 
+                           alt="Pen 1" 
+                           class="rounded -translate-x-6 -translate-y-6"
+                           width="300"
+                    />
+                </div>
+                <div class="text-white p-6 pt-0">
+                    <div class="font-bold mb-2">Hero</div>
+                    <div class="flex gap-1">
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenHeartIcon className="w-3 fill-current"/>
+                            99
+                        </div>
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenCommentIcon className="w-3 fill-current"/>
+                            99
+                        </div>
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenEyeIcon className="w-4 fill-current"/>
+                            99
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute left-64 top-24 z-10 rotate-6 rounded bg-[#1e1f26]">
+                <div>
+                    <Image src={CodepenScreenshot2Image} 
+                           alt="Pen 1" 
+                           class="rounded -translate-x-6 -translate-y-6"
+                           width="300"
+                    />
+                </div>
+                <div class="text-white p-6 pt-0">
+                    <div class="font-bold mb-2">Vue Shop</div>
+                    <div class="flex gap-1">
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenHeartIcon className="w-3 fill-current"/>
+                            99
+                        </div>
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenCommentIcon className="w-3 fill-current"/>
+                            99
+                        </div>
+                        <div class="rounded bg-[#444857] flex gap-2 py-2 px-4">
+                            <CodepenEyeIcon className="w-4 fill-current"/>
+                            99
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Image src={CodepenLinesImage} 
+            alt=""
+            class="absolute top-1/2 left-48"
+     />
+        </div>
+    </div>
+</section>
