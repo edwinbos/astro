@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/theme.css'
+
+import { Image } from 'astro:assets';
+import WarpImage from '../../images/warp.svg';
+import TailwindImage from '../../images/tailwind.svg';
+---
+
+<Layout title="Fetch - Projects - Edwin Bos">
+    <div class="container mx-auto">
+        <div 
+            class="h-[300px] bg-gradient-to-tr from-slate-800 to-slate-600 rounded-3xl grid grid-cols-1 grid-rows-1 mt-16"
+            style="view-transition-name: hero"
+        >
+            <div class="col-start-1 row-start-1 grid place-content-center">
+                <div class="flex gap-4">
+                    <Image src={WarpImage} 
+                        alt="Warp"
+                    />
+                    <Image src={TailwindImage} 
+                        alt="Tailwind"
+                    />
+                </div>
+            </div>
+            <div class="col-start-1 row-start-1 grid justify-items-start items-end p-8">
+                <div class="text-white font-semibold text-2xl">Warp Theme</div>
+            </div>
+        </div>
+    </div>
+</Layout>

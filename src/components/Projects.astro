@@ -3,71 +3,81 @@ import Fetch from './Projects/Fetch.astro'
 import Warp from './Projects/Warp.astro'
 import Laziness from './Projects/Laziness.astro'
 ---
-<div
-    x-data="carousel()"
-    class="flex w-full flex-col"
->
+<section>
+    <h2 class="container mx-auto text-white mb-4">Projects</h2>
     <div
-        x-on:keydown.right="next"
-        x-on:keydown.left="prev"
-        tabindex="0"
-        role="region"
-        aria-labelledby="carousel-label"
-        class="flex space-x-6"
+        x-data="carousel()"
+        class="flex w-full flex-col mb-16"
     >
-        <h2 id="carousel-label" class="sr-only" hidden>Carousel</h2>
-
-        <!-- Prev Button -->
-        <button
-            x-on:click="prev"
-            class="text-6xl"
-            :aria-disabled="atBeginning"
-            :tabindex="atEnd ? -1 : 0"
-            :class="{ 'opacity-50 cursor-not-allowed': atBeginning }"
-        >
-            <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-            </span>
-            <span class="sr-only">Skip to previous slide page</span>
-        </button>
-
-        <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
-
-        <ul
-            x-ref="slider"
+        <div
+            x-on:keydown.right="next"
+            x-on:keydown.left="prev"
             tabindex="0"
-            role="listbox"
-            aria-labelledby="carousel-content-label"
-            class="flex w-full snap-x snap-mandatory overflow-x-scroll hidden-scrollbar"
+            role="region"
+            aria-labelledby="carousel-label"
+            class="flex space-x-6 relative"
         >
-            <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
-                <Fetch/>
-            </li>
+            <h2 id="carousel-label" class="sr-only" hidden>Carousel</h2>
 
-            <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
-                <Warp/>
-            </li>
+            <!-- Prev Button -->
+            <button
+                x-on:click="prev"
+                class="text-6xl absolute left-0 top-1/2"
+                :aria-disabled="atBeginning"
+                :tabindex="atEnd ? -1 : 0"
+                :class="{ 'hidden cursor-not-allowed': atBeginning }"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </span>
+                <span class="sr-only">Skip to previous slide page</span>
+            </button>
 
-            <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
-                <Laziness/>
-            </li>
-        </ul>
+            <span id="carousel-content-label" class="sr-only" hidden>Carousel</span>
 
-        <!-- Next Button -->
-        <button
-            x-on:click="next"
-            class="text-6xl"
-            :aria-disabled="atEnd"
-            :tabindex="atEnd ? -1 : 0"
-            :class="{ 'opacity-50 cursor-not-allowed': atEnd }"
-        >
-            <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-            </span>
-            <span class="sr-only">Skip to next slide page</span>
-        </button>
+            <ul
+                x-ref="slider"
+                tabindex="0"
+                role="listbox"
+                aria-labelledby="carousel-content-label"
+                class="flex w-full snap-x snap-mandatory overflow-x-scroll hidden-scrollbar"
+            >
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Fetch/>
+                </li>
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Warp/>
+                </li>
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Laziness/>
+                </li>
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Fetch/>
+                </li>
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Warp/>
+                </li>
+                <li x-bind="disableNextAndPreviousButtons" class="flex snap-start flex-col items-center justify-center p-2" role="option">
+                    <Laziness/>
+                </li>
+            </ul>
+
+            <!-- Next Button -->
+            <button
+                x-on:click="next"
+                class="text-6xl absolute right-0 top-1/2"
+                :aria-disabled="atEnd"
+                :tabindex="atEnd ? -1 : 0"
+                :class="{ 'hidden cursor-not-allowed': atEnd }"
+            >
+                <span aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </span>
+                <span class="sr-only">Skip to next slide page</span>
+            </button>
+        </div>
     </div>
-</div>
+</section>
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('carousel', () => {
