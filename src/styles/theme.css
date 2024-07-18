@@ -34,12 +34,12 @@ h2 {
 
 /* Old stuff going out */
 ::view-transition-old(hero) {
-    animation: fade 0.2s linear forwards;
+    animation: fade 1s linear forwards;
   }
   
   /* New stuff coming in */
   ::view-transition-new(hero) {
-    animation: fade 0.3s linear reverse;
+    animation: fade 1s linear reverse;
   }
   
   @keyframes fade {
