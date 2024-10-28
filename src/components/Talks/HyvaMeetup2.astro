@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import HyvaWhiteImage from '../../images/hyva-white.svg';
+import ArrowRightIcon from '../../components/Icons/ArrowRight.astro';
+
+const { layout } = Astro.props;
+---
+
+<a 
+    href="/talks/hyva-meetup-2"
+    title="Hyvä Meetup"
+    class="w-full h-96 bg-[#0a23b9] rounded-3xl flex items-end relative"
+    style="view-transition-name: hyva-meetup"
+>
+    <div class="p-8">
+        <div class="text-white" style="view-transition-name: hyva-meetup-text">
+            { layout === 'header' && 
+                <h1 class="font-semibold text-4xl mb-4">Hyvä Meetup #2</h1>
+                <p class="mb-4 text-2xl font-extralight">EIt's time to show off</p>
+            }
+            
+            {layout === "tile" &&
+                <h3 class="font-semibold text-2xl mb-4">Hyvä Meetup #2</h3>
+                <p class="mb-4">It's time to show off</p>
+                <button type="button" class="primary-link">
+                    See presentation <ArrowRightIcon className="w-5 h-5"/>
+                </button>
+            }
+        </div>
+    </div>
+    <Image src={HyvaWhiteImage} 
+           alt="Hyvä Meetup #2"
+           class="opacity-30 absolute -right-8 -bottom-8 h-96 pointer-events-none select-none"
+           loading="lazy"
+           style="view-transition-name: hyva-meetup-image"
+    />
+</a>

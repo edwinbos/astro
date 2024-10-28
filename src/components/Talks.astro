@@ -1,0 +1,15 @@
+---
+import Late from './Talks/Late.astro'
+import HyvaMeetup2 from './Talks/HyvaMeetup2.astro'
+import ArrowRightIcon from '../components/Icons/ArrowRight.astro';
+---
+<section class="container mx-auto mb-12">
+    <h2 class="text-white mb-4">Talks &amp; appearances</h2>
+    <ul class="grid gap-8 mb-4 md:grid-cols-2">
+        <li><Late layout="tile"/></li>
+        <li><HyvaMeetup2 layout="tile"/></li>
+    </ul>
+    <a href="/talks" title="Check out all talks" target="_blank" class="primary-link text-white">
+        Check out all talks <ArrowRightIcon className="w-5 h-5"/>
+    </a>
+</section>                

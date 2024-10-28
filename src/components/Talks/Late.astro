@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import LateImage from '../../images/late.svg';
+import ArrowRightIcon from '../../components/Icons/ArrowRight.astro';
+
+const { layout } = Astro.props;
+---
+
+<a 
+    href="/talks/late-to-the-party"
+    title="Fetch"
+    class="w-full h-96 bg-[#E6007E] rounded-3xl flex items-end relative"
+    style="view-transition-name: late"
+>
+    <div class="p-8">
+        <div class="text-white" style="view-transition-name: late-text">
+            { layout === 'header' && 
+                <h1 class="font-semibold text-4xl mb-4">Late to the party</h1>
+                <p class="mb-4 text-2xl font-extralight">Everything about loading third party scripts</p>
+            }
+            
+            {layout === "tile" &&
+                <h3 class="font-semibold text-2xl mb-4">Late to the party</h3>
+                <p class="mb-4">Everything about loading third party scripts</p>
+                <button type="button" class="primary-link">
+                    See slides <ArrowRightIcon className="w-5 h-5"/>
+                </button>
+            }
+        </div>
+    </div>
+    <Image src={LateImage} 
+           alt="Late to the party"
+           class="opacity-30 absolute -right-16 -bottom-8 h-96 pointer-events-none select-none"
+           loading="lazy"
+           style="view-transition-name: late-image"
+    />
+</a>

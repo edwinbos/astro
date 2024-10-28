@@ -1,0 +1,32 @@
+---
+import Page from '../../layouts/Page.astro';
+import '../../styles/theme.css'
+
+//import { Image } from 'astro:assets';
+//import FetchImage from '../../images/fetch.svg';
+
+import HyvaMeetup2 from '../../components/Talks/HyvaMeetup2.astro'
+---
+
+<Page title="Hyvä Meetup #2 - Talks - Edwin Bos">
+    <HyvaMeetup2 layout="header"/>
+    <div class="max-w-3xl leading-loose mt-16 px-8">
+        <p>
+            Join Danny Verkade and Edwin Bos from Cream for a journey of the development 
+            of their 2nd based Hyvä project for Isenvi - healthy cookware, with best 
+            development practices and learnings.
+        </p>
+    </div>
+    <div class="mt-16">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/Or5zmudmuks?si=zOAcWawe5V0EZT7N&amp;start=2043" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+</Layout>
