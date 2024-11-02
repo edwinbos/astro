@@ -2,13 +2,23 @@
 import Page from '../../layouts/Page.astro';
 import '../../styles/theme.css'
 
-//import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 //import FetchImage from '../../images/fetch.svg';
 
 import Late from '../../components/Talks/Late.astro'
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/late-to-the-party/*.jpeg')
 ---
 
 <Page title="Late to the party - Talks - Edwin Bos">
+    <div class="mb-4">
+        <a href="/" title="Home" class="opacity-60 hover:underline hover:opacity-90">Home</a>
+        <span class="opacity-20"> / </span>
+        <a href="/talks" title="Talks" class="opacity-60 hover:underline hover:opacity-90">Talks</a>
+        <span class="opacity-20"> / </span>
+        <span class="opacity-90">Late to the party</span> 
+    </div>
     <Late layout="header"/>
     <div class="max-w-3xl leading-loose mt-16 px-8">
         <p>
@@ -19,5 +29,52 @@ import Late from '../../components/Talks/Late.astro'
         How do you deal with thirt-party tags in a smart way and ensure that your 
         webshop remains super fast.
         </p>
+    </div>
+    <div class="mt-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+        <script is:inline src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>
+        <div
+            x-data="{
+                init() {
+                    new Glide(this.$refs.glide, {
+                        perView: 1
+                    }).mount()
+                },
+            }"
+        >
+            <div x-ref="glide" class="glide block relative rounded-3xl overflow-hidden">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {Object.keys(images).map((image) => (
+                            <li class="glide__slide flex flex-col items-center justify-center">
+                    
+                                <Image src={image} width={1920} height={1080} alt="Tadaa"/>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="glide__arrows pointer-events-none absolute inset-0 flex items-center justify-between" data-glide-el="controls">
+                    <button
+                        class="glide__arrow glide__arrow--left pointer-events-auto disabled:opacity-50"
+                        data-glide-dir="<"
+                    >
+                        <span aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                        </span>
+                        <span class="sr-only">Skip to previous slide page</span>
+                    </button>
+                    <button
+                        class="glide__arrow glide__arrow--left pointer-events-auto disabled:opacity-50"
+                        data-glide-dir=">"
+                    >
+                        <span aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        </span>
+                        <span class="sr-only">Skip to next slide page</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </Layout>

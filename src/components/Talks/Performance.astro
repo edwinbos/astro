@@ -6,31 +6,31 @@ import ArrowRightIcon from '../../components/Icons/ArrowRight.astro';
 const { layout } = Astro.props;
 ---
 <a 
-    href="/talks/late-to-the-party"
-    title="Fetch"
-    class="w-full h-96 bg-gradient-to-br from-[#ff30b4] to-[#E6007E] rounded-3xl flex items-end relative"
-    style="view-transition-name: late"
+    href="/talks/performance"
+    title="Performance"
+    class="w-full h-96 bg-gradient-to-br from-[#fbd24e] to-[#f49d0c] rounded-3xl flex items-end relative"
+    style="view-transition-name: performance"
 >
     <div class="p-8">
-        <div class="text-white" style="view-transition-name: late-text">
+        <div class="text-slate-900" style="view-transition-name: performance-text">
             { layout === 'header' && 
-                <h1 class="font-semibold text-4xl mb-4">Late to the party</h1>
+                <h1 class="font-semibold text-4xl mb-4">Performance</h1>
                 <p class="mb-4 text-2xl font-extralight">Everything about loading third party scripts</p>
             }
             
             {layout === "tile" &&
-                <h3 class="font-semibold text-2xl mb-4">Late to the party</h3>
+                <h3 class="font-semibold text-2xl mb-4">Performance</h3>
                 <p class="mb-4">Everything about loading third party scripts</p>
                 <button type="button" class="primary-link">
-                    Check out the slides <ArrowRightIcon className="w-5 h-5"/>
+                    See the slides <ArrowRightIcon className="w-5 h-5"/>
                 </button>
             }
         </div>
     </div>
     <Image src={LateImage} 
-           alt="Late to the party"
+           alt="Performance"
            class="opacity-30 absolute -right-16 -bottom-8 h-96 pointer-events-none select-none"
            loading="lazy"
-           style="view-transition-name: late-image"
+           style="view-transition-name: performance-image"
     />
 </a>

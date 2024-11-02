@@ -1,0 +1,28 @@
+---
+import Page from '../layouts/Page.astro';
+import '../styles/theme.css'
+
+//import { Image } from 'astro:assets';
+//import FetchImage from '../../images/fetch.svg';
+
+import Late from '../components/Talks/Late.astro'
+import HyvaMeetup2 from '../components/Talks/HyvaMeetup2.astro'
+import TalkingHyva from '../components/Talks/TalkingHyva.astro'
+import Performance from '../components/Talks/Performance.astro'
+
+---
+
+<Page title="Talks - Edwin Bos">
+    <div class="mb-4">
+        <a href="/" title="Home" class="opacity-60 hover:underline hover:opacity-90">Home</a>
+        <span class="opacity-20"> / </span>
+        <span class="opacity-90">Talks</span> 
+    </div>
+    <h2 class="text-white mb-8">Talks &amp; appearances</h2>
+    <ul class="grid gap-12 mb-4 md:grid-cols-2">
+        <li><Late layout="tile"/></li>
+        <li><HyvaMeetup2 layout="tile"/></li>
+        <li><TalkingHyva layout="tile"/></li>
+        <li><Performance layout="tile"/></li>
+    </ul>
+</Layout>
