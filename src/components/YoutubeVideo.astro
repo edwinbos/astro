@@ -1,0 +1,14 @@
+---
+const { embed } = Astro.props;
+---
+<div class="mt-8 flex justify-center rounded-3xl overflow-hidden border border-white/10">
+    <iframe
+        class="w-full aspect-video"
+        src={`https://www.youtube-nocookie.com/embed/${embed}`}
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen
+    ></iframe>
+</div>

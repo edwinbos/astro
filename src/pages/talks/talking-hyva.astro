@@ -1,11 +1,9 @@
 ---
-import Page from '../../layouts/Page.astro';
+import Page from '../../layouts/Page.astro'
 import '../../styles/theme.css'
 
-//import { Image } from 'astro:assets';
-//import FetchImage from '../../images/fetch.svg';
-
 import TalkingHyva from '../../components/Talks/TalkingHyva.astro'
+import YoutubeVideo from '../../components/YoutubeVideo.astro';
 ---
 
 <Page title="Talking Hyvä - Talks - Edwin Bos">
@@ -17,30 +15,10 @@ import TalkingHyva from '../../components/Talks/TalkingHyva.astro'
         <span class="opacity-90">Talking Hyvä</span> 
     </div>
     <TalkingHyva layout="header"/>
-    <div class="max-w-3xl leading-loose mt-16 px-8">
-        <p>In this episode we're talking with Edwin and Danny from Magento agency Cream Internet.</p>
+    <div class="max-w-3xl leading-loose mt-8 px-8 leading-loose font-light text-lg">
+        <p>In this episode we're talking with Edwin and Danny from Magento agency Cream.</p>
         <p>Edwin Bos is their Lead Frontend, and Danny Verkade CEO and Solution Specialist, also known as one of the Magento Masters of 2018.</p>
         <p>We talk about their experiences with Hyvä Themes so far and innovation driven by our platform.</p>
-
-        <p>
-            <strong>Our speakers:</strong>
-            <ul>
-                <li>Willem Wigman: Founder and creator of Hyvä Themes.</li>
-                <li>Edwin Bos: Lead Front-End at Cream</li>
-                <li>Danny Verkade: CTO at Cream</li>
-            </ul>     
-        </p>
     </div>
-    <div class="mt-16 flex justify-center rounded-3xl overflow-hidden">
-        <iframe
-            class="w-full aspect-video"
-  
-            src="https://www.youtube-nocookie.com/embed/Vl04jd5EJvo?si=TKPEs3Oykjtdxcjg" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-        ></iframe>
-    </div>
+    <YoutubeVideo embed="Vl04jd5EJvo?si=TKPEs3Oykjtdxcjg"></YoutubeVideo>
 </Layout>

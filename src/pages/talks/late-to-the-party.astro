@@ -8,7 +8,7 @@ import { Image } from 'astro:assets';
 
 import Late from '../../components/Talks/Late.astro'
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/late-to-the-party/*.jpeg')
+const images = import.meta.glob<{ default: ImageMetadata }>('/public/late-to-the-party/*.jpeg')
 ---
 
 <Page title="Late to the party - Talks - Edwin Bos">
@@ -20,7 +20,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/late-to
         <span class="opacity-90">Late to the party</span> 
     </div>
     <Late layout="header"/>
-    <div class="max-w-3xl leading-loose mt-16 px-8">
+    <div class="max-w-3xl leading-loose mt-8 px-8 leading-loose font-light text-lg">
         <p>
         You have just delivered your new Hyvä shop. 
         On the test environment you had the magic 100 points in Pagespeed Insights, 
@@ -42,13 +42,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/images/late-to
                 },
             }"
         >
-            <div x-ref="glide" class="glide block relative rounded-3xl overflow-hidden">
+            <div x-ref="glide" class="glide block relative rounded-3xl overflow-hidden border border-white/10">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         {Object.keys(images).map((image) => (
                             <li class="glide__slide flex flex-col items-center justify-center">
                     
-                                <Image src={image} width={1920} height={1080} alt="Tadaa"/>
+                                <Image src={image} width={1920} height={1080} alt=""/>
                             </li>
                         ))}
                     </ul>
