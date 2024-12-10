@@ -5,9 +5,12 @@
 }
 
 .background-grid {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.5px, transparent 0.5px, transparent calc(100% - 0.5px), rgba(255, 255, 255, 0.1) calc(100% - 0.5px)), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.5px, transparent 0.5px, transparent calc(100% - 0.5px), rgba(255, 255, 255, 0.1) calc(100% - 0.5px));
-    background-size: 100px 100px;
-    background-position: -1px -1px;
+  background-image: 
+    linear-gradient(to bottom, transparent 75%, rgb(15 23 42)), 
+    linear-gradient(rgba(255, 255, 255, .1) .5px, transparent .5px, transparent calc(100% - .5px), rgba(255, 255, 255, .1) calc(100% - .5px)), 
+    linear-gradient(90deg, rgba(255, 255, 255, .1) .5px, transparent .5px, transparent calc(100% - .5px), rgba(255, 255, 255, .1) calc(100% - .5px));
+  background-size: 100% 100%, 100px 100px, 100px 100px;
+  background-position: -1px -1px;
 }
 
 h2 {
