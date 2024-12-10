@@ -9,19 +9,19 @@ const { layout } = Astro.props;
 <a 
     href="/talks/hyva-meetup-2"
     title="Hyvä Meetup"
-    class="w-full h-96 bg-gradient-to-br from-[#1335ff] to-[#0a23b9] rounded-3xl flex items-end relative"
+    class="w-full h-96 bg-gradient-to-br from-white to-[#0a23b9] rounded-3xl flex items-end relative"
     style="view-transition-name: hyva-meetup"
 >
-    <div class="p-8">
-        <div class="text-white" style="view-transition-name: hyva-meetup-text">
+    <div class="p-8 relative z-10">
+        <div class="text-slate-900" style="view-transition-name: hyva-meetup-text">
             { layout === 'header' && 
                 <h1 class="font-semibold text-4xl mb-4">Hyvä Meetup #2</h1>
-                <p class="mb-4 text-2xl font-extralight">EIt's time to show off</p>
+                <p class="mb-4 text-2xl font-extralight">It's time to show off</p>
             }
             
             {layout === "tile" &&
-                <h3 class="font-semibold text-2xl mb-4">Hyvä Meetup #2</h3>
-                <p class="mb-4">It's time to show off</p>
+                <h3 class="font-semibold text-3xl mb-4">Hyvä Meetup #2</h3>
+                <p class="mb-4 text-xl font-extralight">It's time to show off</p>
                 <button type="button" class="primary-link">
                     Watch the presentation <ArrowRightIcon className="w-5 h-5"/>
                 </button>

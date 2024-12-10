@@ -1,0 +1,31 @@
+---
+import Page from '../../layouts/Page.astro';
+import '../../styles/theme.css'
+
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+//import FetchImage from '../../images/fetch.svg';
+
+import Performance from '../../components/Talks/Performance.astro'
+---
+
+<Page title="Late to the party - Talks - Edwin Bos">
+    <div class="mb-4">
+        <a href="/" title="Home" class="opacity-60 hover:underline hover:opacity-90">Home</a>
+        <span class="opacity-20"> / </span>
+        <a href="/talks" title="Talks" class="opacity-60 hover:underline hover:opacity-90">Talks</a>
+        <span class="opacity-20"> / </span>
+        <span class="opacity-90">Performance</span> 
+    </div>
+    <Performance layout="header"/>
+    <div class="max-w-3xl leading-loose mt-8 px-8 leading-loose font-light text-lg">
+        <p>
+        You have just delivered your new Hyvä shop. 
+        On the test environment you had the magic 100 points in Pagespeed Insights, 
+        but now a tag manager has been turned on, several extra third-party scripts have 
+        been added and you see your score slowly drop and a slow site as a result. 
+        How do you deal with thirt-party tags in a smart way and ensure that your 
+        webshop remains super fast.
+        </p>
+    </div>
+</Layout>

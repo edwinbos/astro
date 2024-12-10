@@ -9,10 +9,10 @@ const { layout } = Astro.props;
 <a 
     href="/talks/talking-hyva"
     title="Talking Hyvä"
-    class="w-full h-96 bg-gradient-to-br from-[#aeffe4] to-[#14ffaf] rounded-3xl flex items-end relative"
+    class="w-full h-96 bg-gradient-to-br from-white to-[#14ffaf] rounded-3xl flex items-end relative"
     style="view-transition-name: talking-hyva"
 >
-    <div class="p-8">
+    <div class="p-8 relative z-10">
         <div class="text-slate-900" style="view-transition-name: talking-hyva-text">
             { layout === 'header' && 
                 <h1 class="font-semibold text-4xl mb-4">Talking Hyvä</h1>
@@ -20,8 +20,8 @@ const { layout } = Astro.props;
             }
             
             {layout === "tile" &&
-                <h3 class="font-semibold text-2xl mb-4">Talking Hyvä</h3>
-                <p class="mb-4">Experiences with Hyvä Themes so far</p>
+                <h3 class="font-semibold text-3xl mb-4">Talking Hyvä</h3>
+                <p class="mb-4 text-xl font-extralight">Experiences with Hyvä Themes so far</p>
                 <button type="button" class="primary-link">
                     Listen to the podcast <ArrowRightIcon className="w-5 h-5"/>
                 </button>

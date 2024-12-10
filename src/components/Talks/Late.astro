@@ -8,19 +8,19 @@ const { layout } = Astro.props;
 <a 
     href="/talks/late-to-the-party"
     title="Fetch"
-    class="w-full h-96 bg-gradient-to-br from-[#ff30b4] to-[#E6007E] rounded-3xl flex items-end relative"
+    class="w-full h-96 bg-gradient-to-br from-white to-[#E6007E] rounded-3xl flex items-end relative"
     style="view-transition-name: late"
 >
-    <div class="p-8">
-        <div class="text-white" style="view-transition-name: late-text">
+    <div class="p-8 relative z-10">
+        <div class="text-slate-900" style="view-transition-name: late-text">
             { layout === 'header' && 
                 <h1 class="font-semibold text-4xl mb-4">Late to the party</h1>
                 <p class="mb-4 text-2xl font-extralight">Everything about loading third party scripts</p>
             }
             
             {layout === "tile" &&
-                <h3 class="font-semibold text-2xl mb-4">Late to the party</h3>
-                <p class="mb-4">Everything about loading third party scripts</p>
+                <h3 class="font-semibold text-3xl mb-4">Late to the party</h3>
+                <p class="mb-4 text-xl font-extralight">Everything about loading third party scripts</p>
                 <button type="button" class="primary-link">
                     Check out the slides <ArrowRightIcon className="w-5 h-5"/>
                 </button>
