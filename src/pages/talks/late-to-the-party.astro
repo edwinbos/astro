@@ -30,7 +30,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/public/late-to-the
         webshop remains super fast.
         </p>
     </div>
-    <div class="mt-8">
+    <div class="mt-8 container">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
         <script is:inline src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>
         <div
@@ -42,7 +42,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/public/late-to-the
                 },
             }"
         >
-            <div x-ref="glide" class="glide block relative rounded-3xl overflow-hidden border border-white/10">
+            <div x-ref="glide" class="glide block relative rounded-xl overflow-hidden border border-white/10">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         {Object.keys(images).map((image) => (
