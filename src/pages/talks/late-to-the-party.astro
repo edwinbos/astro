@@ -47,8 +47,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/public/late-to-the
                     <ul class="glide__slides">
                         {Object.keys(images).map((image) => (
                             <li class="glide__slide flex flex-col items-center justify-center">
-                    
-                                <Image src={image} width={1920} height={1080} alt=""/>
+                                <Image src={image.replace('/public', '')} width={1920} height={1080} alt=""/>
                             </li>
                         ))}
                     </ul>
