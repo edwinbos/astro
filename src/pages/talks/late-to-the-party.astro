@@ -21,13 +21,61 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/public/late-to-the
     </div>
     <Late layout="header"/>
     <div class="max-w-3xl leading-loose mt-8 px-8 leading-loose font-light text-lg">
-        <p>
-        You have just delivered your new Hyvä shop. 
-        On the test environment you had the magic 100 points in Pagespeed Insights, 
-        but now a tag manager has been turned on, several extra third-party scripts have 
-        been added and you see your score slowly drop and a slow site as a result. 
-        How do you deal with thirt-party tags in a smart way and ensure that your 
-        webshop remains super fast.
+        <p class="mb-4">
+            During the Hyvä Meetup, I gave a presentation about one of the common challenges in web performance: 
+            loading third-party scripts efficiently. It’s a scenario many developers are familiar with—your site 
+            scores perfectly on PageSpeed Insights during testing, but after enabling a tag manager and adding 
+            multiple third-party scripts, performance starts to drop noticeably.
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Understanding the Impact of Third-Party Scripts</h2>
+        <p class="mb-4">
+            Third-party scripts, such as analytics tools, conversion trackers, chat widgets, and video embeds, 
+            can slow down a site if not handled correctly. I highlight why performance matters, 
+            with examples of how even small delays can significantly impact user experience and conversion rates.
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Identifying Low-Hanging Fruits</h2>
+        <p class="mb-4">
+            <ul>
+                <li>Removing unused or outdated scripts.</li>
+                <li>Avoiding redundant scripts, like those loaded without active subscriptions.</li>
+                <li>Replacing scripts with native browser functionalities (e.g., the Share API).</li>
+            </ul>
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Optimizing Scripts</h2>
+        <p class="mb-4">
+            <ul>
+                <li>
+                    Using lightweight alternatives like Lite YouTube Embed for faster video loading or 
+                    Minimal Analytics 4 for a reduced script size.
+                </li>
+                <li>
+                    Avoiding render-blocking resources and ensuring third-party assets are prioritized 
+                    efficiently using techniques like preconnect and prefetch.
+                </li>
+            </ul>
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Loading Scripts on User Interaction</h2>
+        <p class="mb-4">
+            Instead of loading all scripts upfront, the presentation suggests loading them only after user 
+            interaction (e.g., mouseover, touchstart, or scroll). This approach is especially effective for 
+            heavy resources like Tag Manager and chat widgets.
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Advanced Techniques</h2>
+        <p class="mb-4">
+            <ul>
+                <li>Hosting third-party scripts locally to improve control and performance.</li>
+	            <li>Exploring tools like Partytown (beta) to offload third-party scripts from the main thread.</li>
+	            <li>
+                    Transitioning from client-side tracking to server-side GTM for better scalability and 
+                    performance (though this comes with its own technical challenges).
+                </li>
+            </ul>
+        </p>
+        <h2 class="pt-4 mb-2 text-2xl">Takeaways</h2>
+        <p class="mb-4">
+            maintaining a fast and responsive site is about making deliberate choices regarding what scripts 
+            to load, when to load them, and how to optimize them. These practices are especially relevant for 
+            maintaining the high performance standards associated with Hyvä and Magento 2.
         </p>
     </div>
     <div class="mt-8 container">
